@@ -1,0 +1,428 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Clone FirstCry</title>
+      <style>
+          *{
+              box-sizing: border-box;
+              margin:0%;
+              padding:0%;
+          }
+          body{
+              width: 100%;
+          }
+          .nav{
+          height:80px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          justify-content: space-around;
+          /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+        }
+        .nav > img{
+          width:150px;
+          height: 50px;
+        }
+        .nav input{
+          width:300px;
+        }
+        .nav a{
+          text-decoration:none;
+          color: grey;
+        }
+
+        ul{
+          width:100%;
+          padding: 0;
+          list-style: none;
+          background:yellow;
+      }
+      ul li{
+          display: inline-block;
+          position: relative;
+          line-height: 21px;
+          text-align:center;
+      }
+      ul li a{
+          display:block;
+          padding: 8px 10px;
+          color:black;
+          text-decoration: none;
+      }
+      ul li a:hover{
+          color:black;
+          background:white;
+      }
+      ul li ul.dropdown{
+          min-width: 100%; /* Set width of the dropdown */
+          background: #f2f2f2;
+          display: none;
+          position: absolute;
+          z-index: 999;
+          left: 0;
+      }
+      ul li:hover ul.dropdown{
+          display: block;	/* Display the dropdown */
+      }
+      ul li ul.dropdown li{
+          display: block;
+      }
+      .carousel-cell{
+        width:66%;
+        height:500px; 
+        margin-right:10px;
+        background-size: cover;
+        background-position: center center;
+      }
+      .carousel-cell:before{
+        display: block;
+        content: '';
+      }
+      
+      .container-category h2{
+        text-align: center;
+        padding-top: 20px;
+      }
+      #gallery{
+        width:100%;
+        border:1px solid red;
+        display:grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-gap:15px;
+      }
+    
+      .box img{
+        width:100%;
+        justify-content: center;
+      }
+      .box > p{
+        text-align: center;
+      }
+      .box > a{
+        display:block;
+        text-decoration: none;
+        text-align: center;
+      }
+      </style>
+  </head>
+  <body>
+    <!-- 1st nav bar -->
+      <div class="nav">
+        <img src="firstcry.jpg">
+        <input type="text" id="Search" placeholder="Search Product here">
+        <a href="location.html">Select location</a>
+        <a href="stores.html">Stores and Preschools</a>
+        <a href="support.html">Support</a>
+        <a href="Order History.html">Track Order</a>
+        <a href="Login.html">Login/Register</a>
+        <a href="shortlist.html">Shortlist</a>
+      </div>
+
+      <!-- 2nd nav bar -->
+      <ul>
+        <li><a href="#">ALL CATEGORIES &#9662;</a>
+        <ul class="dropdown">
+          <li><a href="#">Boys Fashion</a></li>
+          <li><a href="#">Girls Fashion</a></li>
+          <li><a href="#">Footwear</a></li>
+          <li><a href="#">Toys</a></li>
+          <li><a href="#">Gear</a></li>
+          <li><a href="#">Feeding</a></li>
+          <li><a href="#">Bath</a></li>
+          <li><a href="#">Nursery</a></li>
+          <li><a href="#">Moms</a></li>
+          <li><a href="#">Health & Safety</a></li>
+          <li><a href="#">Boutiques</a></li>
+      </ul>
+      </li>
+        <li><a href="#">BOYS FASHION</a>
+          <ul class="dropdown">
+            <li><a href="#">Boys Fashion</a></li>
+            <li><a href="#">Girls Fashion</a></li>
+            <li><a href="#">Footwear</a></li>
+            <li><a href="#">Toys</a></li>
+            <li><a href="#">Gear</a></li>
+            <li><a href="#">Feeding</a></li>
+            <li><a href="#">Bath</a></li>
+            <li><a href="#">Nursery</a></li>
+            <li><a href="#">Moms</a></li>
+            <li><a href="#">Health & Safety</a></li>
+            <li><a href="#">Boutiques</a></li>
+        </ul>
+      </li>
+        <li>
+            <a href="#">GIRLS FASHION</a>
+            <ul class="dropdown">
+              <li><a href="#">Boys Fashion</a></li>
+              <li><a href="#">Girls Fashion</a></li>
+              <li><a href="#">Footwear</a></li>
+              <li><a href="#">Toys</a></li>
+              <li><a href="#">Gear</a></li>
+              <li><a href="#">Feeding</a></li>
+              <li><a href="#">Bath</a></li>
+              <li><a href="#">Nursery</a></li>
+              <li><a href="#">Moms</a></li>
+              <li><a href="#">Health & Safety</a></li>
+              <li><a href="#">Boutiques</a></li>
+          </ul>
+        </li>
+        <li><a href="#">FOOTWEAR</a>
+          <ul class="dropdown">
+            <li><a href="#">Boys Fashion</a></li>
+            <li><a href="#">Girls Fashion</a></li>
+            <li><a href="#">Footwear</a></li>
+            <li><a href="#">Toys</a></li>
+            <li><a href="#">Gear</a></li>
+            <li><a href="#">Feeding</a></li>
+            <li><a href="#">Bath</a></li>
+            <li><a href="#">Nursery</a></li>
+            <li><a href="#">Moms</a></li>
+            <li><a href="#">Health & Safety</a></li>
+            <li><a href="#">Boutiques</a></li>
+        </ul>
+      </li>
+      <li><a href="#">TOYS</a>
+        <ul class="dropdown">
+          <li><a href="#">Boys Fashion</a></li>
+          <li><a href="#">Girls Fashion</a></li>
+          <li><a href="#">Footwear</a></li>
+          <li><a href="#">Toys</a></li>
+          <li><a href="#">Gear</a></li>
+          <li><a href="#">Feeding</a></li>
+          <li><a href="#">Bath</a></li>
+          <li><a href="#">Nursery</a></li>
+          <li><a href="#">Moms</a></li>
+          <li><a href="#">Health & Safety</a></li>
+          <li><a href="#">Boutiques</a></li>
+      </ul>
+    </li>
+    <li><a href="#">DIAPERING</a>
+      <ul class="dropdown">
+        <li><a href="#">Boys Fashion</a></li>
+        <li><a href="#">Girls Fashion</a></li>
+        <li><a href="#">Footwear</a></li>
+        <li><a href="#">Toys</a></li>
+        <li><a href="#">Gear</a></li>
+        <li><a href="#">Feeding</a></li>
+        <li><a href="#">Bath</a></li>
+        <li><a href="#">Nursery</a></li>
+        <li><a href="#">Moms</a></li>
+        <li><a href="#">Health & Safety</a></li>
+        <li><a href="#">Boutiques</a></li>
+    </ul>
+  </li>
+  <li><a href="#">GEAR</a>
+    <ul class="dropdown">
+      <li><a href="#">Boys Fashion</a></li>
+      <li><a href="#">Girls Fashion</a></li>
+      <li><a href="#">Footwear</a></li>
+      <li><a href="#">Toys</a></li>
+      <li><a href="#">Gear</a></li>
+      <li><a href="#">Feeding</a></li>
+      <li><a href="#">Bath</a></li>
+      <li><a href="#">Nursery</a></li>
+      <li><a href="#">Moms</a></li>
+      <li><a href="#">Health & Safety</a></li>
+      <li><a href="#">Boutiques</a></li>
+  </ul>
+  </li>
+  <li><a href="#">FEEDING</a>
+    <ul class="dropdown">
+      <li><a href="#">Boys Fashion</a></li>
+      <li><a href="#">Girls Fashion</a></li>
+      <li><a href="#">Footwear</a></li>
+      <li><a href="#">Toys</a></li>
+      <li><a href="#">Gear</a></li>
+      <li><a href="#">Feeding</a></li>
+      <li><a href="#">Bath</a></li>
+      <li><a href="#">Nursery</a></li>
+      <li><a href="#">Moms</a></li>
+      <li><a href="#">Health & Safety</a></li>
+      <li><a href="#">Boutiques</a></li>
+  </ul>
+  </li>
+  <li><a href="#">BATH</a>
+    <ul class="dropdown">
+      <li><a href="#">Boys Fashion</a></li>
+      <li><a href="#">Girls Fashion</a></li>
+      <li><a href="#">Footwear</a></li>
+      <li><a href="#">Toys</a></li>
+      <li><a href="#">Gear</a></li>
+      <li><a href="#">Feeding</a></li>
+      <li><a href="#">Bath</a></li>
+      <li><a href="#">Nursery</a></li>
+      <li><a href="#">Moms</a></li>
+      <li><a href="#">Health & Safety</a></li>
+      <li><a href="#">Boutiques</a></li>
+  </ul>
+  </li>
+  <li><a href="#">NURSERY</a>
+    <ul class="dropdown">
+      <li><a href="#">Boys Fashion</a></li>
+      <li><a href="#">Girls Fashion</a></li>
+      <li><a href="#">Footwear</a></li>
+      <li><a href="#">Toys</a></li>
+      <li><a href="#">Gear</a></li>
+      <li><a href="#">Feeding</a></li>
+      <li><a href="#">Bath</a></li>
+      <li><a href="#">Nursery</a></li>
+      <li><a href="#">Moms</a></li>
+      <li><a href="#">Health & Safety</a></li>
+      <li><a href="#">Boutiques</a></li>
+  </ul>
+  </li>
+  <li><a href="#">MOMS</a>
+    <ul class="dropdown">
+      <li><a href="#">Boys Fashion</a></li>
+      <li><a href="#">Girls Fashion</a></li>
+      <li><a href="#">Footwear</a></li>
+      <li><a href="#">Toys</a></li>
+      <li><a href="#">Gear</a></li>
+      <li><a href="#">Feeding</a></li>
+      <li><a href="#">Bath</a></li>
+      <li><a href="#">Nursery</a></li>
+      <li><a href="#">Moms</a></li>
+      <li><a href="#">Health & Safety</a></li>
+      <li><a href="#">Boutiques</a></li>
+  </ul>
+  </li>
+  <li><a href="#">HEALTH</a>
+    <ul class="dropdown">
+      <li><a href="#">Boys Fashion</a></li>
+      <li><a href="#">Girls Fashion</a></li>
+      <li><a href="#">Footwear</a></li>
+      <li><a href="#">Toys</a></li>
+      <li><a href="#">Gear</a></li>
+      <li><a href="#">Feeding</a></li>
+      <li><a href="#">Bath</a></li>
+      <li><a href="#">Nursery</a></li>
+      <li><a href="#">Moms</a></li>
+      <li><a href="#">Health & Safety</a></li>
+      <li><a href="#">Boutiques</a></li>
+  </ul>
+  </li>
+  <li><a href="#">BOUTIQUE</a>
+    <ul class="dropdown">
+      <li><a href="#">Boys Fashion</a></li>
+      <li><a href="#">Girls Fashion</a></li>
+      <li><a href="#">Footwear</a></li>
+      <li><a href="#">Toys</a></li>
+      <li><a href="#">Gear</a></li>
+      <li><a href="#">Feeding</a></li>
+      <li><a href="#">Bath</a></li>
+      <li><a href="#">Nursery</a></li>
+      <li><a href="#">Moms</a></li>
+      <li><a href="#">Health & Safety</a></li>
+      <li><a href="#">Boutiques</a></li>
+  </ul>
+  </li>
+  <li><a href="#" style="background-color: blue;">Carter's</a>
+    <ul class="dropdown">
+      <li><a href="#">Boys Fashion</a></li>
+      <li><a href="#">Girls Fashion</a></li>
+      <li><a href="#">Footwear</a></li>
+      <li><a href="#">Toys</a></li>
+      <li><a href="#">Gear</a></li>
+      <li><a href="#">Feeding</a></li>
+      <li><a href="#">Bath</a></li>
+      <li><a href="#">Nursery</a></li>
+      <li><a href="#">Moms</a></li>
+      <li><a href="#">Health & Safety</a></li>
+      <li><a href="#">Boutiques</a></li>
+  </ul>
+  </li>
+    </ul>
+    
+    <!-- image slider pan -->
+  <div class="carousel" data-flickity='{"wrapAround":true,"autoPlay":true}'>
+    <div class="carousel-cell">
+      <img src="https://cdn.fcglcdn.com/brainbees/banners/merchf_roi_hp1677029723254.webp">
+    </div>
+    <div class="carousel-cell" >
+    <img src="https://cdn.fcglcdn.com/brainbees/banners/mktng_hp_nursery_22ndfeb1676981013138.webp">
+    </div>
+    <div class="carousel-cell">
+    <img src="https://cdn.fcglcdn.com/brainbees/banners/merchf_roi_hp1677029723254.webp">
+    </div>
+    <div class="carousel-cell">
+      <img src="//cdn.fcglcdn.com/brainbees/banners/haus&kinder_hp_mkt_po3_all_haus601676986899673.webp">
+    </div>
+  </div>
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+  <!-- blocks for categories -->
+  <div class="container-category">
+    <h2>PREMIUM BOUTIQUES</h2>
+    <div id="gallery">
+      <div class="box">
+        <img src="https://cdn.fcglcdn.com/brainbees/images/boutique/670x670/29128.webp">
+        <p>Festival of Colors L Up To 24M</p>
+        <a href="#" class="btn">Shop now</a>
+      </div>
+      <div class="box">
+        <img src="https://cdn.fcglcdn.com/brainbees/images/boutique/670x670/29129.webp">
+        <p>Action for Latest Fashion</p>
+        <a href="#" class="btn">Shop now</a>
+      </div>
+        <div class="box">
+          <img src="https://cdn.fcglcdn.com/brainbees/images/boutique/670x670/29119.webp">
+          <p>Freshest Collection | Up to 24M</p>
+          <a href="#" class="btn">Shop now</a>
+       </div>
+          <div class="box">
+          <img src="https://cdn.fcglcdn.com/brainbees/images/boutique/670x670/29169.webp">
+          <p>Stay Fashion Forward | 2 - 14Y</p>
+          <a href="#" class="btn">Shop now</a>
+          </div>
+          <div class="box">
+          <img src="https://cdn.fcglcdn.com/brainbees/images/boutique/670x670/29168.webp">
+          <p>Time to Assemble | Up to 10Y</p>
+          <a href="#" class="btn">Shop now</a>
+          </div>
+          <div class="box">
+          <img src="https://cdn.fcglcdn.com/brainbees/images/boutique/670x670/29169.webp">
+          <p>Time to Assemble | Up to 10Y</p>
+          <a href="#" class="btn">Shop now</a>
+          </div>
+          <div class="box">
+          <img src="https://cdn.fcglcdn.com/brainbees/images/boutique/670x670/29170.webp">
+          <p>Time to Assemble | Up to 10Y</p>
+          <a href="#" class="btn">Shop now</a>
+          </div>
+          <div class="box">
+          <img src="https://cdn.fcglcdn.com/brainbees/images/boutique/670x670/29174.webp">
+          <p>Time to Assemble | Up to 10Y</p>
+          <a href="#" class="btn">Shop now</a>
+          </div>
+          <div class="box">
+          <img src="https://cdn.fcglcdn.com/brainbees/images/boutique/670x670/29171.webp">
+          <p>Time to Assemble | Up to 10Y</p>
+          <a href="#" class="btn">Shop now</a>
+          </div>
+          <div class="box">
+          <img src="https://cdn.fcglcdn.com/brainbees/images/boutique/670x670/29172.webp">
+          <p>Time to Assemble | Up to 10Y</p>
+          <a href="#" class="btn">Shop now</a>
+          </div>
+          <div class="box">
+            <img src="https://cdn.fcglcdn.com/brainbees/images/boutique/670x670/29172.webp">
+            <p>Time to Assemble | Up to 10Y</p>
+            <a href="#" class="btn">Shop now</a>
+            </div>
+            <div class="box">
+              <img src="https://cdn.fcglcdn.com/brainbees/images/boutique/670x670/29172.webp">
+              <p>Time to Assemble | Up to 10Y</p>
+              <a href="#" class="btn">Shop now</a>
+              </div>
+    </div>
+  </div>
+
+  <!-- another image section -->
+
+
+  </body>
+  </html>
