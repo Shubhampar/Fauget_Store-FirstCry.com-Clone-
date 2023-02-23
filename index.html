@@ -5,6 +5,7 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Clone FirstCry</title>
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
       <style>
           *{
               box-sizing: border-box;
@@ -33,12 +34,14 @@
           text-decoration:none;
           color: grey;
         }
-
-        ul{
+        #nav2{
+        background:yellow;
+        }
+       ul{
           width:100%;
           padding: 0;
           list-style: none;
-          background:yellow;
+          /* background:yellow; */
       }
       ul li{
           display: inline-block;
@@ -81,22 +84,28 @@
         display: block;
         content: '';
       }
-      
+      .container-category{
+        width:100%;
+        margin:auto;
+        padding:auto;
+        /* align-items: center; */
+      }
       .container-category h2{
         text-align: center;
-        padding-top: 20px;
+        padding-top: 30px;
       }
       #gallery{
-        width:100%;
-        border:1px solid red;
+        width:80%;
         display:grid;
         grid-template-columns: repeat(3,1fr);
-        grid-gap:15px;
+        grid-gap:15px; 
+        margin:0 auto; 
       }
     
       .box img{
         width:100%;
-        justify-content: center;
+        /* align-items: center; */
+        /* justify-content:space-around; */
       }
       .box > p{
         text-align: center;
@@ -106,23 +115,138 @@
         text-decoration: none;
         text-align: center;
       }
+      .box1 > a{
+        display:block;
+        width:50%;
+        height:50px;
+        text-decoration: none;
+        padding-top:20px;
+        margin:0 auto;
+        float:left;
+        text-align: center;
+        /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+        gap:10px;
+      }
+      #gallery1{
+        width:80%;
+        margin:0 auto; 
+      }
+    
+      .box1 img{
+        width:100%;
+      }
+      /* footer css */
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+body{
+	line-height: 1.5;
+	font-family: 'Poppins', sans-serif;
+}
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+.container{
+	max-width: 1170px;
+	margin:auto;
+}
+.row{
+	display: flex;
+	flex-wrap: wrap;
+}
+ul{
+	list-style: none;
+}
+.footer{
+	background-color:lightblue;
+    padding: 70px 0;
+}
+.footer-col{
+   width: 25%;
+   padding: 0 15px;
+}
+.footer-col h4{
+	font-size: 18px;
+	color:black;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: #e91e63;
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+.footer-col ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+	color:black;
+	text-decoration: none;
+	font-weight: 300;
+	color:black;
+	display: block;
+	transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+	color: #ffffff;
+	padding-left: 8px;
+}
+.footer-col .social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(255,255,255,0.2);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color:black;
+	transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+	color: #24262b;
+	background-color: #ffffff;
+}
+
+/*responsive*/
+@media(max-width: 767px){
+  .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+}
+}
+@media(max-width: 574px){
+  .footer-col{
+    width: 100%;
+}
+}
       </style>
   </head>
   <body>
     <!-- 1st nav bar -->
       <div class="nav">
         <img src="firstcry.jpg">
-        <input type="text" id="Search" placeholder="Search Product here">
+        <input type="text" id="Search" placeholder="Search Product here"><i class="fa fa-search" aria-hidden="true"></i>
         <a href="location.html">Select location</a>
         <a href="stores.html">Stores and Preschools</a>
         <a href="support.html">Support</a>
         <a href="Order History.html">Track Order</a>
         <a href="Login.html">Login/Register</a>
         <a href="shortlist.html">Shortlist</a>
+        <a id="_go_to_cart" href="data.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart</a>
       </div>
 
       <!-- 2nd nav bar -->
-      <ul>
+      <ul id="nav2">
         <li><a href="#">ALL CATEGORIES &#9662;</a>
         <ul class="dropdown">
           <li><a href="#">Boys Fashion</a></li>
@@ -417,12 +541,77 @@
               <img src="https://cdn.fcglcdn.com/brainbees/images/boutique/670x670/29172.webp">
               <p>Time to Assemble | Up to 10Y</p>
               <a href="#" class="btn">Shop now</a>
-              </div>
-    </div>
-  </div>
+            </div>
+         </div>
+         <div class="box1">
+          <a href="#" class="btn">View All Boutiques</a>
+          </div>
+          <div class="box1">
+          <a href="#" class="btn">View All Premium Brands</a>
+        </div>
+       </div>
+
+       
 
   <!-- another image section -->
+  <div id="gallery1">
+    <div class="box1">
+      <img src="https://cdn.fcglcdn.com/brainbees/images/cattemplate/1920_446_desktop_spring_2023_01_new.jpg">
+    </div>
+    <div class="box1">
+      <img src="https://cdn.fcglcdn.com/brainbees/images/cattemplate/fashion_desktop_spring_060223_02_new_new.jpg">
+      <img src="https://cdn.fcglcdn.com/brainbees/images/cattemplate/fashion_desktop_spring_060223_03_new_new.jpg">
+      <img src="https://cdn.fcglcdn.com/brainbees/images/cattemplate/fashion_desktop_spring_060223_04_new_new.jpg">
+    </div>
+    </div>
+<!-- Animation -->
+<marquee height="100px">
+  <img src="https://cdn.fcglcdn.com/brainbees/banners/brandstrip1208-3-new-19-08-19.jpg">
+</marquee>
+<!-- footer section -->
 
-
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="footer-col">
+        <h4>company</h4>
+        <ul>
+          <li><a href="#">about us</a></li>
+          <li><a href="#">our services</a></li>
+          <li><a href="#">privacy policy</a></li>
+          <li><a href="#">affiliate program</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>get help</h4>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">shipping</a></li>
+          <li><a href="#">returns</a></li>
+          <li><a href="#">order status</a></li>
+          <li><a href="#">payment options</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>online shop</h4>
+        <ul>
+          <li><a href="#">watch</a></li>
+          <li><a href="#">bag</a></li>
+          <li><a href="#">shoes</a></li>
+          <li><a href="#">dress</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>follow us</h4>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
   </body>
   </html>

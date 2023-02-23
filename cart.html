@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <style>
+    #cart {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 20px;
+  }
+  
+  .item {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid blue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .item img {
+    height: 200px;
+  }
+  
+  #cart div > img {
+    width: 300px;
+  }
+  
+  #checkout {
+    margin-top: 100px;
+  }
+  
+  </style>
+
+  <body>
+    <div id="total-div">
+      <h2 id="cart_total">
+        <!--Show cart total here, do not add anything only Total value. Not even "Total - 1200Rs" but like this "1200" -->
+      </h2>
+    </div>
+    <div id="cart">
+      <!--Show products added to cart here-->
+      <!-- add an remove button to each product so that you can remove that product from cart, give the button HTML id as 'remove' -->
+    </div>
+
+    <button id="_checkout">
+      <a href="checkout.html">Checkout</a>
+    </button>
+    <script >
+        cart_count();
+
+showItems();
+function showItems() {
+  fetch(url)
+    .then((res) => res.json())
+    .then((res) => {
+      console.log(res.data, "res");
+      append(res.data);
+    });
+}
+
+function append(data) {
+  let container = document.getElementById("items");
+  data.forEach((el, index) => {
+    let div = document.createElement("div");
+    div.setAttribute("class", "item");
+
+    let img = document.createElement("img");
+    img.src = el.image;
+    let p1 = document.createElement("p");
+    p1.innerText = el.name;
+    let p2 = document.createElement("p");
+    p2.innerText = el.price;
+
+    let btn = document.createElement("button");
+    btn.innerText = "Add to Cart";
+    btn.setAttribute("class", "add_to_cart");
+    btn.onclick = () => {
+      addToCart(el);
+    };
+
+    div.append(img, p1, p2, btn);
+    container.appendChild(div);
+  });
+}
+
+function addToCart(el) {
+  let data = JSON.parse(localStorage.getItem("items")) || [];
+
+  data.push(el);
+
+  localStorage.setItem("items", JSON.stringify(data));
+  cart_count();
+}
+
+function cart_count() {
+  let data = JSON.parse(localStorage.getItem("items")) || [];
+  let c = document.getElementById("item_count");
+  c.innerText = data.length;
+}
+    </script>
+  </body>
+</html>
