@@ -1,0 +1,23 @@
+*{
+    margin:0%;
+    padding:0%;
+}
+.nav{
+height:80px;
+display: flex;
+align-items: center;
+justify-content: center;
+justify-content: space-around;
+/* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+}
+.nav > img{
+width:150px;
+height: 50px;
+}
+.nav input{
+width:300px;
+}
+.nav a{
+text-decoration:none;
+color: grey;
+}
