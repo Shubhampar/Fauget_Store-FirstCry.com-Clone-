@@ -4,105 +4,181 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Cart Page</title>
+    <style>
+      /* Write all necessery css here  */
+      *{
+              box-sizing: border-box;
+              margin:0%;
+              padding:0%;
+          }
+          body{
+              width: 100%;
+          }
+          .nav{
+          height:80px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          justify-content: space-around;
+          /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+        }
+        .nav > img{
+          width:150px;
+          height: 50px;
+        }
+        .nav input{
+          width:300px;
+        }
+        .nav a{
+          text-decoration:none;
+          color: grey;
+        }
+        #nav2{
+        background:yellow;
+        }
+      #product-container {
+        /* border: 2px solid red; */
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 20px;
+      }
+      #product-container > div {
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        padding: 20px;
+      }
+      #product-container > div > img {
+        width: 100%;
+        height: 200px;
+      }
+      #product-container > div > button {
+        display: block;
+        margin: auto;
+      }
+
+      #filter {
+        display: block;
+        margin: auto;
+        font-size: 15px;
+        padding: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
+      #cart-container {
+        /* border: 2px solid red; */
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 20px;
+      }
+      #cart-container > div {
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        padding: 20px;
+      }
+      #cart-container > div > img {
+        width: 100%;
+        height: 200px;
+      }
+      #cart-container > div > button {
+        /* display: block; */
+        /* margin: auto; */
+        margin-left: 5px;
+      }
+
+    </style>
   </head>
-
-  <style>
-    #cart {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    grid-gap: 20px;
-  }
-  
-  .item {
-    width: 300px;
-    padding: 10px;
-    border: 1px solid blue;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .item img {
-    height: 200px;
-  }
-  
-  #cart div > img {
-    width: 300px;
-  }
-  
-  #checkout {
-    margin-top: 100px;
-  }
-  
-  </style>
-
   <body>
-    <div id="total-div">
-      <h2 id="cart_total">
-        <!--Show cart total here, do not add anything only Total value. Not even "Total - 1200Rs" but like this "1200" -->
-      </h2>
+    <div class="nav">
+      <img src="firstcry.jpg">
+      <input type="text" id="Search" placeholder="Search Product here" onkeyup="searchbar()"><i class="fa fa-search" aria-hidden="true"></i>
+      <a href="location.html">Select location</a>
+      <a href="stores.html">Stores and Preschools</a>
+      <a href="support.html">Support</a>
+      <a href="Order History.html">Track Order</a>
+      <a href="Login.html">Login/Register</a>
+      <a href="shortlist.html">Shortlist</a>
+      <a id="_go_to_cart" href="cart.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart</a>
     </div>
-    <div id="cart">
-      <!--Show products added to cart here-->
-      <!-- add an remove button to each product so that you can remove that product from cart, give the button HTML id as 'remove' -->
+    <h1 id="total">Your Total cart Price is:- <span id="cart-total">0</span></h1>
+    <div id="cart-container">
+      <!-- Here Append All the cart Products  -->
     </div>
-
-    <button id="_checkout">
-      <a href="checkout.html">Checkout</a>
-    </button>
-    <script >
-        cart_count();
-
-showItems();
-function showItems() {
-  fetch(url)
-    .then((res) => res.json())
-    .then((res) => {
-      console.log(res.data, "res");
-      append(res.data);
-    });
-}
-
-function append(data) {
-  let container = document.getElementById("items");
-  data.forEach((el, index) => {
-    let div = document.createElement("div");
-    div.setAttribute("class", "item");
-
-    let img = document.createElement("img");
-    img.src = el.image;
-    let p1 = document.createElement("p");
-    p1.innerText = el.name;
-    let p2 = document.createElement("p");
-    p2.innerText = el.price;
-
-    let btn = document.createElement("button");
-    btn.innerText = "Add to Cart";
-    btn.setAttribute("class", "add_to_cart");
-    btn.onclick = () => {
-      addToCart(el);
-    };
-
-    div.append(img, p1, p2, btn);
-    container.appendChild(div);
-  });
-}
-
-function addToCart(el) {
-  let data = JSON.parse(localStorage.getItem("items")) || [];
-
-  data.push(el);
-
-  localStorage.setItem("items", JSON.stringify(data));
-  cart_count();
-}
-
-function cart_count() {
-  let data = JSON.parse(localStorage.getItem("items")) || [];
-  let c = document.getElementById("item_count");
-  c.innerText = data.length;
-}
-    </script>
   </body>
+  <script>
+    let Container=document.getElementById("cart-container")
+
+    let Cart=JSON.parse(localStorage.getItem("cart"))
+    function DisplayData() {
+      Container.innerHTML = "";
+      Cart.forEach((product) => {
+        let Card = document.createElement("div");
+        let Image = document.createElement("img");
+        let Brand = document.createElement("h2");
+        let Category = document.createElement("h4");
+        let Price = document.createElement("h3");
+        let Detail = document.createElement("p");
+        let Remove = document.createElement("button");
+        let Increase = document.createElement("button");
+        let Decrease = document.createElement("button");
+        let Quantity = document.createElement("span");
+        Image.src = product.img;
+        Brand.textContent = product.brand;
+        Category.textContent = product.category;
+        Price.textContent = `₹${product.price}`;
+        Detail.textContent = product.details;
+        Quantity.textContent=product.quantity;
+        Increase.textContent="+"
+        Decrease.textContent="-"
+        Remove.textContent = "Remove"
+     
+        Remove.addEventListener("click", () => {
+          Cart=Cart.filter((ele)=>{
+            return ele.id!==product.id
+          })
+          localStorage.setItem("cart",JSON.stringify(Cart))
+          DisplayData()
+        });
+        Increase.addEventListener("click", () => {
+        product=product.quantity++
+    
+        localStorage.setItem("cart",JSON.stringify(Cart))
+          DisplayData()
+      
+        });
+       Decrease.addEventListener("click", () => {
+          if(product.quantity>1){
+            product=product.quantity--
+            localStorage.setItem("cart",JSON.stringify(Cart))
+          DisplayData()
+          }
+      
+        });
+
+        let sum=0;
+        for(let i=0;i<Cart.length;i++){
+            sum+=Cart[i].price*Cart[i].quantity;
+        }
+    
+         document.getElementById("cart-total").textContent=sum;
+        Card.append(Image, Brand, Price, Detail, Category,Increase,Quantity,Decrease, Remove)
+        Container.append(Card);
+      });
+
+      // console.log("display", data);
+    }
+    DisplayData()
+
+    // Write all necessery JS here 
+  </script>
 </html>

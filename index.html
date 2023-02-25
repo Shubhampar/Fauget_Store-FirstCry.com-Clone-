@@ -15,13 +15,20 @@
           body{
               width: 100%;
           }
-          .nav{
+           .nav{
           height:80px;
           display: flex;
           align-items: center;
           justify-content: center;
           justify-content: space-around;
           /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+        }
+        .nav{
+          position: fixed; /* Set the navbar to fixed position */
+          top: 0; /* Position the navbar at the top of the page */
+         width: 100%; 
+         background-color: white;
+         z-index: 0;
         }
         .nav > img{
           width:150px;
@@ -36,6 +43,7 @@
         }
         #nav2{
         background:yellow;
+        margin-top: 100px;
         }
        ul{
           width:100%;
@@ -120,6 +128,7 @@
         width:50%;
         height:50px;
         text-decoration: none;
+
         padding-top:20px;
         margin:0 auto;
         float:left;
@@ -235,22 +244,22 @@ ul{
     <!-- 1st nav bar -->
       <div class="nav">
         <img src="firstcry.jpg">
-        <input type="text" id="Search" placeholder="Search Product here"><i class="fa fa-search" aria-hidden="true"></i>
+        <input type="text" id="Search" placeholder="Search Product here" onkeyup="searchbar()"><i class="fa fa-search" aria-hidden="true"></i>
         <a href="location.html">Select location</a>
         <a href="stores.html">Stores and Preschools</a>
         <a href="support.html">Support</a>
         <a href="Order History.html">Track Order</a>
         <a href="Login.html">Login/Register</a>
         <a href="shortlist.html">Shortlist</a>
-        <a id="_go_to_cart" href="data.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart</a>
+        <a id="_go_to_cart" href="cart.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart</a>
       </div>
 
       <!-- 2nd nav bar -->
       <ul id="nav2">
         <li><a href="#">ALL CATEGORIES &#9662;</a>
         <ul class="dropdown">
-          <li><a href="#">Boys Fashion</a></li>
-          <li><a href="#">Girls Fashion</a></li>
+          <li><a href="Boysdata.html">Boys Fashion</a></li>
+          <li><a href="girlsdata.html">Girls Fashion</a></li>
           <li><a href="#">Footwear</a></li>
           <li><a href="#">Toys</a></li>
           <li><a href="#">Gear</a></li>
@@ -550,9 +559,6 @@ ul{
           <a href="#" class="btn">View All Premium Brands</a>
         </div>
        </div>
-
-       
-
   <!-- another image section -->
   <div id="gallery1">
     <div class="box1">
@@ -560,7 +566,7 @@ ul{
     </div>
     <div class="box1">
       <img src="https://cdn.fcglcdn.com/brainbees/images/cattemplate/fashion_desktop_spring_060223_02_new_new.jpg">
-      <img src="https://cdn.fcglcdn.com/brainbees/images/cattemplate/fashion_desktop_spring_060223_03_new_new.jpg">
+      <img  src="https://cdn.fcglcdn.com/brainbees/images/cattemplate/fashion_desktop_spring_060223_03_new_new.jpg">
       <img src="https://cdn.fcglcdn.com/brainbees/images/cattemplate/fashion_desktop_spring_060223_04_new_new.jpg">
     </div>
     </div>
@@ -614,4 +620,9 @@ ul{
   </div>
 </footer>
   </body>
+  <script>
+    let searchbar =()=>{
+      let filtersearch=document.getElementById("Search").value.tolowercase();
+    }
+  </script>
   </html>
