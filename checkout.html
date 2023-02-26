@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <title>Checkout</title>
+    <style>
+        #checkout-container {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    margin: auto;
+    gap: 20px;
+    align-items: center;
+  }
+  #checkout-container > button{
+    border: radius 10px;
+  }
+  
+    </style>
+  </head>
+
+  <body>
+
+      <div id="checkout-container">
+  
+        <h1>Checkout</h1>
+        <input type="text" id="name" placeholder="Name" required/>
+        <input type="number" id="number" placeholder="number" required/>
+        <input type="text" id="address" placeholder="Address" required/>
+        <button id="place-order" onclick="submit()">Place Order</button>
+        <h4 id ="order-message"></h4>
+      </div>
+    <script>
+        function submit() {
+  let orderConfirm = document.getElementById("order-message");
+  orderConfirm.textContent = "Your order is succesfully placed";
+  localStorage.clear();
+  setTimeout(() => {
+    location.replace("index.html");
+  }, 1000);
+}
+    </script>
+  </body>
+</html>
+

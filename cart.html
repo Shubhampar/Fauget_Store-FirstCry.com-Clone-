@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <title>Cart Page</title>
     <style>
       /* Write all necessery css here  */
@@ -23,9 +24,10 @@
           justify-content: space-around;
           /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
         }
-        .nav > img{
-          width:150px;
-          height: 50px;
+        .nav > a img{
+          width:100px;
+          height:80px;
+          padding-top:20px;
         }
         .nav input{
           width:300px;
@@ -94,23 +96,31 @@
         /* display: block; */
         /* margin: auto; */
         margin-left: 5px;
+        background-color:rgb(103, 220, 220);
+        border-radius:10px;
+        /* height:20px; */
+        width: 100px;   
       }
+      /* #checkout{
+        background-color:aqua;
+        border: radius 5px;
+        width: 100px;
+        height: 50px;
+      } */
 
     </style>
   </head>
   <body>
     <div class="nav">
-      <img src="firstcry.jpg">
+     <a href="./index.html"><img src="./logo.jpg"></a> 
       <input type="text" id="Search" placeholder="Search Product here" onkeyup="searchbar()"><i class="fa fa-search" aria-hidden="true"></i>
-      <a href="location.html">Select location</a>
-      <a href="stores.html">Stores and Preschools</a>
-      <a href="support.html">Support</a>
-      <a href="Order History.html">Track Order</a>
+ 
       <a href="Login.html">Login/Register</a>
       <a href="shortlist.html">Shortlist</a>
-      <a id="_go_to_cart" href="cart.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart</a>
+      <!-- <a id="_go_to_cart" href="cart.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart</a> -->
     </div>
-    <h1 id="total">Your Total cart Price is:- <span id="cart-total">0</span></h1>
+    <h1 style="text-align: center;padding-top: 20px;" id="total">Your Total cart Price is:- <span id="cart-total">0</span></h1>
+     <a id="checkout" href="checkout.html" style="display:block;text-align: center;padding-top:20px;"><button style="background:aqua;width:100px;border-radius:10px;">Checkout</button ></a>
     <div id="cart-container">
       <!-- Here Append All the cart Products  -->
     </div>
@@ -171,8 +181,10 @@
         }
     
          document.getElementById("cart-total").textContent=sum;
+       
         Card.append(Image, Brand, Price, Detail, Category,Increase,Quantity,Decrease, Remove)
         Container.append(Card);
+        // document.getElementById("checkout").addEventListener("click",()=>{window.location.href="./checkout.html"})
       });
 
       // console.log("display", data);
